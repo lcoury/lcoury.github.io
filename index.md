@@ -1,6 +1,11 @@
 ---
-output: 
+output:
   html_document:
+    theme: journal
+    highlight: haddock
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
     keep_md: true
 fontsize: 12pt
 ---
@@ -64,7 +69,7 @@ It is important to note that there are a number of factors which cause variation
 
 ## Seasonality and Precipitation
 Oregon experiences considerable seasonality in precipitation levels. To capture the effects on seasonality on precipitation levels, I divided the Oregon precipitation data by season. I assigned seasonal cutoffs to calendar seasons (i.e. December, January, and February constitute winter months, March, April and May constitute spring months, etc.). Clearly this calendar cutoff is somewhat arbitrary and will not perfectly capture true seasonality. Even so, it will still provide important insight into Oregon's precipitation. 
-![](index_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](index_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 As with the more general Oregon graph, the seasonal trend lines are fairly flat with the possible exception of the spring trend.
 
 \newpage
@@ -104,13 +109,13 @@ Analyzing seasonal trends shows that, even when divided by season, Oregon has no
 ## Climate Divisions and Precipitation
 Oregon is a climatologically diverse state with significantly regional variation in precipitation. To account for this variation, NOAA divides the state into nine climate divisions designated by the numbers 1 through 9. Even these climate divisions are too broad to capture the full range of climate diversity. However, analyzing trends in each region should provide a picture into how, or if, precipitation trends differ between different climates. Before analyzing the trends, it is important to understand how precipitation varies among these climate divisions by looking at average monthly precipitation levels.
 
-![](index_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](index_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 In this map we can see the significant variation in average precipitation by climate division. Broadly, divisions west of the Cascade Mountains, or divisions 1-4 which are the Coast, Willamette Valley, Southwestern Valley, and Northern Cascades respectively, received higher levels of precipitation than the divisions east of the cascade mountains. Divisions 5-9 which are the High Plateau, North Central, South Central, North East, and South East respectively, are considerably more arid than the western part of the state. This phenomena is called the rain shadow effect. 
 
 \newpage
 Given the significant precipitation variation among climate divisions, I was curious if these divisions also had differences in precipitation trends over the last century. To answer this question, I found the trend in average monthly precipitation for each climate division, controlling for seasonality.
 
-![](index_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](index_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 We can see that there are indeed differing trends among climate regions. In general, this graph shows that there is a difference in trend between the wetter climates west of the cascades and the dryer climates in the eastern rain shadow of the cascades. The wetter climate divisions appear to have higher trends in precipitation than the more arid climate divisions.
 
 
@@ -228,7 +233,7 @@ In all of my analysis so far, I have considered precipitation in all its forms. 
 \hfill\break
 It is challenging to find time series data on the snowfall data for Oregon stretching as far back as a century. However, Crater Lake National Park has reliably documented the annual snowfall in the park since the 1930s. Using numbers provided by Crater Lake National Park on average annual snowfall by decade there is a clear downward trend in snowfall over the last century.
 
-![](index_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](index_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 This graph shows that there is a clear negative trend in snowfall in Crater Lake National Park. It is impossible to generalize snowfall in one location as indicative of Oregon as a whole. Therefore, I will be careful not to overstate the Oregon-wide implications of this Crater Lake trend. However, I think this trend can suggest something about how climate change is impacting Oregon. It is worth noting that Crater Lake is in the high plateau (climate division 5) which, as can be seen above, has not experienced a statistically significant decline in precipitation over the last century. We can conclude that, at least in Crater Lake, total precipitation has been fairly constant but more of it has been falling as rain, rather than snow.
 
 
