@@ -1,6 +1,6 @@
 ---
 output: 
-  pdf_document:
+  html_document:
     keep_md: true
 fontsize: 12pt
 ---
@@ -33,33 +33,26 @@ Analyzing these three areas will provide a solid understanding of how, or if, Or
 The first area of focus is also the simplest to analyze. I want to understand how precipitation in Oregon as a whole has changed over the last century. My initial assumption was that I should observe a downward trend in precipitation levels over time. This assumption would line up with the anecdotal evidence that a dryer Oregon is making wildfires and droughts more severe. To make this analysis, I used data compiled by the National Oceanic and Atmospheric Administration (NOAA). Using this data, I was able to graph a scatter plot of total monthly precipitation over the last century and then find a trend line: 
 
 
-![](index_files/figure-latex/unnamed-chunk-2-1.pdf)<!-- --> 
+![](index_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 The trend line in this graph contradicts my assumption. Rather than a downward trend in monthly precipitation, there is a flat or slightly positive trend over the last century.
 
-\newpage
+
 As shown in the table below, the trend in precipitation in Oregon in the last century is around a positive 0.001 inches per year. Note, that this trend is not statistically significant. So it is impossible to say with certainty whether or not this is a non-zero trend.
 
 
-\begin{table}[!htbp] \centering 
-  \caption{Annual Oregon Precipitation Trend Since 1921} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-2} 
-\\[-1.8ex] & Precipitation in Inches \\ 
-\hline \\[-1.8ex] 
- Annual Trend & 0.001 \\ 
-  & (0.001) \\ 
-  & \\ 
-\hline \\[-1.8ex] 
-Observations & 1,209 \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table} 
+```
+## 
+## <table style="text-align:center"><caption><strong>Annual Oregon Precipitation Trend Since 1921</strong></caption>
+## <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td><em>Dependent variable:</em></td></tr>
+## <tr><td></td><td colspan="1" style="border-bottom: 1px solid black"></td></tr>
+## <tr><td style="text-align:left"></td><td>Precipitation in Inches</td></tr>
+## <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Annual Trend</td><td>0.001</td></tr>
+## <tr><td style="text-align:left"></td><td>(0.001)</td></tr>
+## <tr><td style="text-align:left"></td><td></td></tr>
+## <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>1,209</td></tr>
+## <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+## </table>
+```
 The main take away from the graph and Table 1 is that the trend in Oregon precipitation has been quite flat over the last century. This trend seems to challenge the perception of a dryer Oregon. This raises the obvious question, can Oregon truly be getting dyer if there seems to be virtually no change in precipitation over the last century? But if Oregon is not seeing a sizable change in precipitation, what explains the increase in wildfires? This high-level overview reveals that a more detailed analysis of trends within Oregon was warranted which I will explore in the second area of focus.
 
 
@@ -71,7 +64,7 @@ It is important to note that there are a number of factors which cause variation
 
 ## Seasonality and Precipitation
 Oregon experiences considerable seasonality in precipitation levels. To capture the effects on seasonality on precipitation levels, I divided the Oregon precipitation data by season. I assigned seasonal cutoffs to calendar seasons (i.e. December, January, and February constitute winter months, March, April and May constitute spring months, etc.). Clearly this calendar cutoff is somewhat arbitrary and will not perfectly capture true seasonality. Even so, it will still provide important insight into Oregon's precipitation. 
-![](index_files/figure-latex/unnamed-chunk-3-1.pdf)<!-- --> 
+![](index_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 As with the more general Oregon graph, the seasonal trend lines are fairly flat with the possible exception of the spring trend.
 
 \newpage
@@ -111,13 +104,13 @@ Analyzing seasonal trends shows that, even when divided by season, Oregon has no
 ## Climate Divisions and Precipitation
 Oregon is a climatologically diverse state with significantly regional variation in precipitation. To account for this variation, NOAA divides the state into nine climate divisions designated by the numbers 1 through 9. Even these climate divisions are too broad to capture the full range of climate diversity. However, analyzing trends in each region should provide a picture into how, or if, precipitation trends differ between different climates. Before analyzing the trends, it is important to understand how precipitation varies among these climate divisions by looking at average monthly precipitation levels.
 
-![](index_files/figure-latex/unnamed-chunk-5-1.pdf)<!-- --> 
+![](index_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 In this map we can see the significant variation in average precipitation by climate division. Broadly, divisions west of the Cascade Mountains, or divisions 1-4 which are the Coast, Willamette Valley, Southwestern Valley, and Northern Cascades respectively, received higher levels of precipitation than the divisions east of the cascade mountains. Divisions 5-9 which are the High Plateau, North Central, South Central, North East, and South East respectively, are considerably more arid than the western part of the state. This phenomena is called the rain shadow effect. 
 
 \newpage
 Given the significant precipitation variation among climate divisions, I was curious if these divisions also had differences in precipitation trends over the last century. To answer this question, I found the trend in average monthly precipitation for each climate division, controlling for seasonality.
 
-![](index_files/figure-latex/unnamed-chunk-6-1.pdf)<!-- --> 
+![](index_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 We can see that there are indeed differing trends among climate regions. In general, this graph shows that there is a difference in trend between the wetter climates west of the cascades and the dryer climates in the eastern rain shadow of the cascades. The wetter climate divisions appear to have higher trends in precipitation than the more arid climate divisions.
 
 
@@ -235,7 +228,7 @@ In all of my analysis so far, I have considered precipitation in all its forms. 
 \hfill\break
 It is challenging to find time series data on the snowfall data for Oregon stretching as far back as a century. However, Crater Lake National Park has reliably documented the annual snowfall in the park since the 1930s. Using numbers provided by Crater Lake National Park on average annual snowfall by decade there is a clear downward trend in snowfall over the last century.
 
-![](index_files/figure-latex/unnamed-chunk-9-1.pdf)<!-- --> 
+![](index_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 This graph shows that there is a clear negative trend in snowfall in Crater Lake National Park. It is impossible to generalize snowfall in one location as indicative of Oregon as a whole. Therefore, I will be careful not to overstate the Oregon-wide implications of this Crater Lake trend. However, I think this trend can suggest something about how climate change is impacting Oregon. It is worth noting that Crater Lake is in the high plateau (climate division 5) which, as can be seen above, has not experienced a statistically significant decline in precipitation over the last century. We can conclude that, at least in Crater Lake, total precipitation has been fairly constant but more of it has been falling as rain, rather than snow.
 
 
